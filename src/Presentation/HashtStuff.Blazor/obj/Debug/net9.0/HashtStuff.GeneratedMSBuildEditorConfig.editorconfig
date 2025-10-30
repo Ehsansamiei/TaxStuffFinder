@@ -1,0 +1,101 @@
+is_global = true
+build_property.TargetFramework = net9.0
+build_property.TargetFramework = net9.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = HashtStuff
+build_property.RootNamespace = HashtStuff
+build_property.ProjectDir = /home/ehsan/EHsan/Projects/MyProjects/C#/Blazor/HsahtStuff-Blazor/src/Presentation/HashtStuff.Blazor/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 9.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /home/ehsan/EHsan/Projects/MyProjects/C#/Blazor/HsahtStuff-Blazor/src/Presentation/HashtStuff.Blazor
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 9.0
+build_property.EnableCodeStyleSeverity = 
+
+[/home/ehsan/EHsan/Projects/MyProjects/C\#/Blazor/HsahtStuff-Blazor/src/Presentation/HashtStuff.Blazor/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/ehsan/EHsan/Projects/MyProjects/C\#/Blazor/HsahtStuff-Blazor/src/Presentation/HashtStuff.Blazor/Icons/Copybtn.razor]
+build_metadata.AdditionalFiles.TargetPath = SWNvbnMvQ29weWJ0bi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/ehsan/EHsan/Projects/MyProjects/C\#/Blazor/HsahtStuff-Blazor/src/Presentation/HashtStuff.Blazor/Icons/SearchIcon.razor]
+build_metadata.AdditionalFiles.TargetPath = SWNvbnMvU2VhcmNoSWNvbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/ehsan/EHsan/Projects/MyProjects/C\#/Blazor/HsahtStuff-Blazor/src/Presentation/HashtStuff.Blazor/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ291bnRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/ehsan/EHsan/Projects/MyProjects/C\#/Blazor/HsahtStuff-Blazor/src/Presentation/HashtStuff.Blazor/Pages/FetchData.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRmV0Y2hEYXRhLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/ehsan/EHsan/Projects/MyProjects/C\#/Blazor/HsahtStuff-Blazor/src/Presentation/HashtStuff.Blazor/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL1N1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/ehsan/EHsan/Projects/MyProjects/C\#/Blazor/HsahtStuff-Blazor/src/Presentation/HashtStuff.Blazor/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/ehsan/EHsan/Projects/MyProjects/C\#/Blazor/HsahtStuff-Blazor/src/Presentation/HashtStuff.Blazor/Components/CustomDropDown/CustomDropDown.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9DdXN0b21Ecm9wRG93bi9DdXN0b21Ecm9wRG93bi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-mvb32091li
+
+[/home/ehsan/EHsan/Projects/MyProjects/C\#/Blazor/HsahtStuff-Blazor/src/Presentation/HashtStuff.Blazor/Components/Pagination/PaginationBox.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdpbmF0aW9uL1BhZ2luYXRpb25Cb3gucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-kqkx022qnt
+
+[/home/ehsan/EHsan/Projects/MyProjects/C\#/Blazor/HsahtStuff-Blazor/src/Presentation/HashtStuff.Blazor/Components/SearchInput/SearchINput.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TZWFyY2hJbnB1dC9TZWFyY2hJTnB1dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-z2e7lsvrwi
+
+[/home/ehsan/EHsan/Projects/MyProjects/C\#/Blazor/HsahtStuff-Blazor/src/Presentation/HashtStuff.Blazor/Components/SnackBarNotification/SnackBarNotification.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9TbmFja0Jhck5vdGlmaWNhdGlvbi9TbmFja0Jhck5vdGlmaWNhdGlvbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-lqwrujzvpy
+
+[/home/ehsan/EHsan/Projects/MyProjects/C\#/Blazor/HsahtStuff-Blazor/src/Presentation/HashtStuff.Blazor/Components/ToastMessage/ToastMessage.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9Ub2FzdE1lc3NhZ2UvVG9hc3RNZXNzYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-5v3p298pud
+
+[/home/ehsan/EHsan/Projects/MyProjects/C\#/Blazor/HsahtStuff-Blazor/src/Presentation/HashtStuff.Blazor/Pages/EbadiPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRWJhZGlQYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-qm5itd2192
+
+[/home/ehsan/EHsan/Projects/MyProjects/C\#/Blazor/HsahtStuff-Blazor/src/Presentation/HashtStuff.Blazor/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL01haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-n0rrocj98v
+
+[/home/ehsan/EHsan/Projects/MyProjects/C\#/Blazor/HsahtStuff-Blazor/src/Presentation/HashtStuff.Blazor/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL05hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-hut6wlwu1n
+
+[/home/ehsan/EHsan/Projects/MyProjects/C\#/Blazor/HsahtStuff-Blazor/src/Presentation/HashtStuff.Blazor/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/ehsan/EHsan/Projects/MyProjects/C\#/Blazor/HsahtStuff-Blazor/src/Presentation/HashtStuff.Blazor/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/ehsan/EHsan/Projects/MyProjects/C\#/Blazor/HsahtStuff-Blazor/src/Presentation/HashtStuff.Blazor/Pages/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

@@ -1,0 +1,28 @@
+@namespace HashtStuff.Blazor.Components.Pagination
+
+<nav class="pagination-container">
+    <ul class="pagination">
+        <li class="page-item prev-next @(currentPage == 1 ? "disabled" : "")">
+            <button class="page-link" @onclick="() => OnPageSelected.InvokeAsync(1)">اول</button>
+        </li>
+        
+        <li class="page-item prev-next @(currentPage == 1 ? "disabled" : "")">
+            <button class="page-link" @onclick="PreviosPage">قبل</button>
+        </li>
+        @foreach (var pageNumber in GetPageNumbers())
+        {
+
+            <li class="page-item @(currentPage == pageNumber ? "active" : "")">
+                <button class="page-link" @onclick="() => OnPageSelected.InvokeAsync(pageNumber)">@pageNumber</button>
+            </li>
+        }
+
+        <li class="page-item prev-next @(currentPage == totalPages ? "disabled" : "")">
+            <button class="page-link" @onclick="NextPage">بعد</button>
+        </li>
+        <li class="page-item prev-next @(currentPage == totalPages ? "disabled" : "")">
+            <button class="page-link" @onclick="() => OnPageSelected.InvokeAsync(totalPages)">آخر</button>
+        </li>
+
+    </ul>
+</nav>

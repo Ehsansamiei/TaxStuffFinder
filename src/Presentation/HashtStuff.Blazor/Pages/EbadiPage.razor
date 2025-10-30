@@ -1,0 +1,277 @@
+@page "/"
+@inject ebadiService ExcelService
+@inject IJSRuntime JSRuntime
+@inject NavigationManager Navigation
+@using HashtStuff.Blazor.Components.Pagination
+@using HashtStuff.Blazor.Components.SearchInput
+@using HashtStuff.Blazor.Components.CustomDropDown
+@using HashtStuff.Blazor.Components.SnackBarNotification
+@using HashtStuff.Blazor.Components.ToastMessage
+<h3>جستجو بین شناسه کالا/خدمات</h3>
+
+<div class="horizontal-layout responsive-form">
+    <div class="input-box">
+        <input type="text" @bind="groupVatRateFromInput" placeholder="ارزش افزوده را وارد کنید" />
+    </div>
+
+    <CustomDropDown TItem="string" Items="@typeStuffIdOptions" GetText="type => type" Placeholder="نوع را انتخاب کنید"
+        Value="groupTypeStuffIdFromInput" OnSelected="@(type => groupTypeStuffIdFromInput = type)">
+        <ItemTemplate>
+            <strong>@context</strong>
+        </ItemTemplate>
+    </CustomDropDown>
+
+    <SearchINput @bind-Value="searchTermFromInput"></SearchINput>
+
+    <button class="Search-btn" @onclick="@Search">جستجو کن</button>
+</div>
+
+@if (isLoading)
+{
+    <div class="loader-wrapper">
+        <div class="loader"></div>
+        <p class="loading-text">در حال جستجو...</p>
+    </div>
+}
+
+else if (groupedResults != null && groupedResults.Any())
+{
+    <div class="table-responsive" style="overflow-x:auto;">
+        <RadzenDataGrid class="col-md-12" Data="@pagedItems" TItem="StuffModel" AllowColumnResize="true"
+            AllowPaging="false" PageSize="@itemsPerPage" PagerHorizontalAlign="HorizontalAlign.Left" AllowSorting="true"
+            ColumnWidth="auto"
+            style="--rz-grid-header-background-color: #93CBD8; --rz-base-background-color: #ffffff; height:75vh;">
+
+            <Columns>
+                <RadzenDataGridColumn TItem="StuffModel" Property="StuffID" Title="شناسه کالا/خدمات" Width="100px">
+                    <Template Context="item">
+                        <button class="copy-btn" @onclick="() => CopyStuffID(item.StuffID)">
+                            <HashtStuff.Icons.Copybtn></HashtStuff.Icons.Copybtn>
+                        </button>
+                        @item.StuffID
+                    </Template>
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="StuffModel" Property="Descript" Title="توضیحات" Width="400px" />
+                <RadzenDataGridColumn TItem="StuffModel" Property="VatRate" Title="ارزش افزوده" Width="100px" />
+                <RadzenDataGridColumn TItem="StuffModel" Property="EditDateFa" Title="تاریخ بروزرسانی" Width="100px" />
+                <RadzenDataGridColumn TItem="StuffModel" Property="typeStuffid" Title="نوع کالا/خدمات" Width="100px" />
+            </Columns>
+
+        </RadzenDataGrid>
+    </div>
+
+
+    <div class="pagination">
+        @foreach (var group in groupedResults)
+        {
+            var totalItemsInGroup = group.Value.Count;
+            var totalPagesInGroup = (int)Math.Ceiling((double)totalItemsInGroup / itemsPerPage);
+
+            @if (totalItemsInGroup > itemsPerPage)
+            {
+                <PaginationBox currentPage="@currentPage" totalPages="@totalPagesInGroup" OnPageSelected="@GoToPage"
+                    NextPage="@NextPage" PreviosPage="@PreviousPage">
+                </PaginationBox>
+            }
+
+            @if (!string.IsNullOrWhiteSpace(copyMessage))
+            {
+                <div class="snackBarNotificationContainer">
+                    @* <SnackBarNotification></SnackBarNotification> *@
+                    <ToastMessage notifType="Success" headerTxt="باموفقیت انجام شد!" detailTxt="@copyMessage"></ToastMessage>
+                </div>
+            }
+        }
+    </div>
+}
+
+else if (isSearched)
+{
+    <div class="d-flex justify-content-center align-items-center" style="height: 70vh; flex-direction: column;">
+        <img src="/Images/NotFound.png" style="height:45vh;">
+    </div>
+}
+
+<script>
+    window.showCopyToast = function () {
+        const toast = document.getElementById("copyToast");
+        if (!toast) return;
+
+        toast.classList.add("show");
+
+        setTimeout(() => {
+            toast.classList.remove("show");
+        }, 2000);
+    };
+</script>
+
+@code {
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "searchTerm")]
+    public string searchTerm { get; set; }
+
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "vatRate")]
+    public string groupVatRate { get; set; }
+
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "typeStuffId")]
+    public string groupTypeStuffId { get; set; }
+
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "page")]
+    public int? pageFromUrl { get; set; }
+
+    private List<string> typeStuffIdOptions = new();
+    private Dictionary<string, List<StuffModel>> groupedResults = null;
+    private bool isSearched = false;
+    private bool isLoading = false; // New loading state
+
+
+    private string searchTermFromInput;
+    private string groupVatRateFromInput;
+    private string groupTypeStuffIdFromInput;
+
+    private List<string[]> filteredResults = new();
+    private int totalPages => (int)Math.Ceiling((double)groupedResults.Count / itemsPerPage);
+    private IEnumerable<StuffModel> pagedItems => currentGroup?.Skip((currentPage - 1) * itemsPerPage).Take(itemsPerPage) ??
+    Enumerable.Empty<StuffModel>();
+    private List<StuffModel> currentGroup => groupedResults?.FirstOrDefault().Value;
+    private int currentPage = 1;
+    private int itemsPerPage = 15;
+
+    protected override void OnInitialized()
+    {
+        typeStuffIdOptions = ExcelService.GetTypeStuffIdOptions();
+    }
+
+    private bool fromUserSearch = false;
+    protected override async Task OnParametersSetAsync()
+    {
+        // Set values of parameters on form inputs
+        searchTermFromInput = searchTerm;
+        groupVatRateFromInput = groupVatRate;
+        groupTypeStuffIdFromInput = groupTypeStuffId;
+
+        // If one of parameters has value, Search
+        if (!string.IsNullOrWhiteSpace(searchTerm) ||
+        !string.IsNullOrWhiteSpace(groupTypeStuffId))
+        {
+            if (!fromUserSearch)
+            {
+                groupedResults = ExcelService.SearchAndGroup(searchTermFromInput, groupVatRateFromInput, groupTypeStuffIdFromInput);
+                isSearched = true;
+
+                // If value of page came from url, set itself
+                if (pageFromUrl.HasValue && pageFromUrl.Value > 0)
+                {
+                    currentPage = pageFromUrl.Value;
+                }
+                else
+                {
+                    currentPage = 1; 
+                }
+            }
+        }
+        fromUserSearch = false;
+    }
+
+    private string copyMessage = "";
+    private async Task CopyStuffID(string stuffID)
+    {
+        await JSRuntime.InvokeVoidAsync("copyTextToClipboard", stuffID);
+
+        copyMessage = $"کد {stuffID} کپی شد.";
+
+        await JSRuntime.InvokeVoidAsync("showCopyToast");
+        StateHasChanged();
+
+        await Task.Delay(4800);
+        copyMessage = "";
+        StateHasChanged();
+    }
+
+    private async Task Search()
+    {
+        isLoading = true; // Show loading
+        StateHasChanged();
+
+        groupedResults = null; // Clear previous results
+        isSearched = false; // Reset search state
+
+
+        await Task.Delay(100);
+        groupedResults = ExcelService.SearchAndGroup(searchTermFromInput, groupVatRateFromInput, groupTypeStuffIdFromInput);
+        
+        var query = new Dictionary<string, object>
+        {
+            ["searchTerm"] = searchTermFromInput ?? "",
+            ["vatRate"] = groupVatRateFromInput ?? "",
+            ["typeStuffId"] = groupTypeStuffIdFromInput ?? "",
+            ["page"] = currentPage
+        };
+
+        var uri = Navigation.GetUriWithQueryParameters(query);
+        fromUserSearch = true;
+        Navigation.NavigateTo(uri, forceLoad: false);
+        
+        currentPage = 1; // Reset to first page
+        isSearched = true;
+        isLoading = false; // Hide loading
+        StateHasChanged(); // Update UI with results
+    }
+
+    private void UpdateUrl()
+    {
+        var query = new Dictionary<string, object>();
+        if (!string.IsNullOrWhiteSpace(searchTermFromInput))
+            query["searchTerm"] = searchTermFromInput;
+
+        if (!string.IsNullOrWhiteSpace(groupVatRateFromInput))
+            query["vatRate"] = groupVatRateFromInput;
+
+        if (!string.IsNullOrWhiteSpace(groupTypeStuffIdFromInput))
+            query["typeStuffId"] = groupTypeStuffIdFromInput;
+
+        query["page"] = currentPage;
+
+        var uri = Navigation.GetUriWithQueryParameters(query);
+        Navigation.NavigateTo(uri, forceLoad: false);
+    }
+
+    private void PreviousPage()
+    {
+        if (currentPage > 1)
+        {
+            currentPage--;
+            UpdateUrl();
+        }
+    }
+
+    private void NextPage()
+    {
+        if (groupedResults.Any())
+        {
+            var maxPages = groupedResults.Max(g => (int)Math.Ceiling((double)g.Value.Count / itemsPerPage));
+            if (currentPage < maxPages)
+            {
+                currentPage++;
+                UpdateUrl();
+            }
+        }
+    }
+
+    private void GoToPage(int page)
+    {
+        if (groupedResults.Any())
+        {
+            var maxPages = groupedResults.Max(g => (int)Math.Ceiling((double)g.Value.Count / itemsPerPage));
+            if (page >= 1 && page <= maxPages)
+            {
+                currentPage = page;
+                UpdateUrl();
+            }
+        }
+    }
+
+}

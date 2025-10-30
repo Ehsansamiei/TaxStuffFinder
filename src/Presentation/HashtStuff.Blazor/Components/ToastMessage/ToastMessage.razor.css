@@ -1,0 +1,142 @@
+.ToastMessageError {
+    color: #323232;
+    width: 343px;
+    height: 82px;
+    position: relative;
+    background: linear-gradient(90deg,rgba(255, 255, 255, 1) 60%, rgba(255, 234, 234, 1) 88%);
+    border-radius: 8px;
+    direction: rtl;
+    text-align: right;
+    box-shadow: 0px 8px 10px 0px #00000033;
+    /* padding: 16px 16px 12px 16px;  */
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    animation: showToast 4.8s forwards;
+}
+
+@keyframes showToast {
+    0% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden; /* مخفی کردن عنصر پس از محو شدن */
+    }
+}
+
+.msg-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px; /* فاصله بین strong و error-detail */
+    margin: 21px 64px 21px 16px;
+}
+
+.msg-container strong{
+    font-size: 17px;
+    color: #323232;
+}
+.error-txt{
+    font-size: 17px;
+
+}
+
+.msg-detail{
+    font-size: 13px;
+    margin: 0;
+    color: #6D6D6D;
+}
+
+.notif-icon{
+    position: absolute;
+    right: 16px;
+}
+
+.X-icon{
+    position: absolute;
+    left: 8px;
+    top: 8px;
+}
+
+.progress-bar-error {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background-color: #BA1A1A;
+    width: 100%;
+    animation: shrinkBar 4.8s linear forwards;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+@keyframes shrinkBar {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0%;
+    }
+}
+
+.ToastMessageSuccess{
+    color: #323232;
+    width: 343px;
+    height: 82px;
+    position: relative;
+    background: linear-gradient(90deg,rgba(255, 255, 255, 1) 60%, rgba(238, 254, 244, 1) 85%);
+    border-radius: 8px;
+    direction: rtl;
+    text-align: right;
+    box-shadow: 0px 8px 10px 0px #00000033;
+    /* padding: 16px 16px 12px 16px;  */
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    animation: showToast 4.8s forwards;
+}
+
+.progress-bar-success{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background-color: #14AE5C;
+    width: 100%;
+    animation: shrinkBar 4.8s linear forwards;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.ToastMessageInfo{
+    color: #323232;
+    width: 343px;
+    height: 82px;
+    position: relative;
+    background: linear-gradient(90deg,rgba(255, 255, 255, 1) 60%, rgba(254, 250, 237, 1) 85%);
+    border-radius: 8px;
+    direction: rtl;
+    text-align: right;
+    box-shadow: 0px 8px 10px 0px #00000033;
+    /* padding: 16px 16px 12px 16px;  */
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    animation: showToast 4.8s forwards;
+}
+
+.progress-bar-info{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background-color: #E8B931;
+    width: 100%;
+    animation: shrinkBar 4.8s linear forwards;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}

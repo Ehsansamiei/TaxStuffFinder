@@ -1,0 +1,95 @@
+.pagination[b-kqkx022qnt] {
+    font-family: inherit;
+    display: flex;
+    list-style: none;
+    padding: 0;
+    align-items: center;
+}
+
+.pagination-container[b-kqkx022qnt] {
+    direction: ltr;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+    /* فاصله از بالا */
+    margin-bottom: 10px;
+    /* فاصله از پایین */
+    justify-content: center;
+
+}
+
+.page-item[b-kqkx022qnt] {
+    margin: 0 5px;
+}
+
+.page-link[b-kqkx022qnt] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-family: inherit;
+    font-size: 14px;
+    color: #001A47;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.page-link:hover[b-kqkx022qnt] {
+    background-color: #f0f4f8;
+}
+
+.page-item.active .page-link[b-kqkx022qnt] {
+    font-family: inherit;
+    background-color: #d6e7ee;
+    color: #014478;
+    font-weight: bold;
+}
+
+.page-item.disabled .page-link[b-kqkx022qnt] {
+    color: #adb5bd;
+    cursor: not-allowed;
+}
+
+.ellipsis[b-kqkx022qnt] {
+    color: #adb5bd;
+    font-size: 14px;
+}
+
+/* حذف دایره و سایه در تمام حالات */
+.page-link:focus[b-kqkx022qnt],
+.page-link:active[b-kqkx022qnt] {
+    outline: none;
+    /* حذف دایره تمرکز */
+    box-shadow: none;
+    /* حذف سایه */
+}
+
+/* برای دکمه‌های "قبل" و "بعد" */
+.page-item.prev-next .page-link:focus[b-kqkx022qnt],
+.page-item.prev-next .page-link:active[b-kqkx022qnt] {
+    background-color: none;
+    /* حذف رنگ پس‌زمینه در حالت فعال */
+    color: inherit;
+    /* استفاده از رنگ اصلی برای متن */
+}
+
+.page-item.prev-next .page-link[b-kqkx022qnt] {
+    font-family: inherit;
+    /* اضافه کردن فونت به دکمه‌های قبل و بعد */
+    width: 51.91200256347656px;
+    height: 35px;
+    border-radius: 24px;
+    padding: 5px 15px;
+
+    transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.page-item.prev-next .page-link :hover[b-kqkx022qnt] {
+    background-color: #37393E1F !important;
+}

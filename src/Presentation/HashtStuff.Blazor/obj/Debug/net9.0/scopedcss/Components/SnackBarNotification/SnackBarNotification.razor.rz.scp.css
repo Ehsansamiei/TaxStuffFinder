@@ -1,0 +1,54 @@
+.snackbar[b-lqwrujzvpy] {
+    font-family: inherit;
+    direction: rtl;
+    position: relative;
+    width: 348px;
+    height: 90px;
+    background-color: #0C7040;
+    color: white;
+    padding: 20px 68px 9px 38px;
+    border-radius: 20px;
+    
+}
+
+.error-txt[b-lqwrujzvpy]{
+    font-size: 20px;
+}
+
+.error-detail[b-lqwrujzvpy]{
+    font-size: 13px;
+}
+
+.X[b-lqwrujzvpy]{
+    position: absolute;
+    top: 18px;
+    left: 22px;
+}
+
+.snackbar-icon[b-lqwrujzvpy]{
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+}
+
+.snackbar-topicon-wrapper[b-lqwrujzvpy] {
+    position: absolute;
+    top: -20px;
+    right: 12px;
+    width: 42px;
+    height: 54px;
+}
+
+.snackbar-topicon[b-lqwrujzvpy] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.tick[b-lqwrujzvpy] {
+    position: absolute;
+    top: 14px;
+    right: 12px;
+    z-index: 2;
+}

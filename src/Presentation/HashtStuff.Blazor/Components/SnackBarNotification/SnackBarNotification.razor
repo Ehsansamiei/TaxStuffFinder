@@ -1,0 +1,52 @@
+@namespace HashtStuff.Blazor.Components.SnackBarNotification
+<div class="snackbar">
+        <p class="error-txt">موفقیت آمیز</p>
+        <p class="error-detail">کپی شد</p>
+
+
+    <div class="snackbar-topicon-wrapper">
+    <svg class="snackbar-topicon" width="42" height="54" viewBox="0 0 42 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_1291_36165)">
+            <path d="M18.7438 38.6904C17.3796 39.3026 17.1451 41.1407 18.3119 42.0757L27.3827 49.3448C28.6015 50.3216 30.4196 49.5867 30.6173 48.0372L32.1517 36.0091C32.3494 34.4597 30.7741 33.2919 29.349 33.9314L18.7438 38.6904Z" fill="black" fill-opacity="0.21"/>
+            <circle cx="21" cy="21" r="21" transform="matrix(-1 0 0 1 42 0)" fill="#0C7040"/>
+            <circle cx="21" cy="21" r="21" transform="matrix(-1 0 0 1 42 0)" fill="black" fill-opacity="0.21"/>
+        </g>
+        <defs>
+            <clipPath id="clip0_1291_36165">
+                <rect width="42" height="53.7175" fill="white" transform="matrix(-1 0 0 1 42 0)"/>
+            </clipPath>
+        </defs>
+    </svg>
+
+
+        <svg class="tick" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 4.5L6.75 12.75L3 9" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </div>
+
+
+    <svg class="snackbar-icon" width="54" height="50" viewBox="0 0 54 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_1291_36154)">
+            <path d="M27.913 29.0318C30.413 29.0318 49.1209 25.0238 53.913 28.0318C54.5796 34.6984 51.713 48.5318 34.913 50.5318H5.91296C8.42849 45.4375 16.413 37.0318 18.913 35.0318C21.413 33.0318 20.913 28.5318 18.913 26.0318C16.913 23.5318 12.413 24.0318 9.41296 22.5318C6.41296 21.0318 4.41296 18.1318 4.41296 14.5318C4.41296 10.0318 7.91296 4.53178 13.913 5.03178C19.913 5.53178 22.913 11.5318 22.413 14.5318C21.913 17.5318 18.913 22.0318 22.413 26.0318C25.913 30.0318 25.413 29.0318 27.913 29.0318Z" fill="black" fill-opacity="0.21"/>
+            <circle cx="2.25" cy="2.25" r="2.25" transform="matrix(-1 0 0 1 5 30)" fill="black" fill-opacity="0.21"/>
+            <circle cx="5.5" cy="5.5" r="5.5" transform="matrix(-1 0 0 1 47 0)" fill="black" fill-opacity="0.21"/>
+        </g>
+        <defs>
+            <clipPath id="clip0_1291_36154">
+                <rect width="53.5" height="50.5318" fill="white" transform="matrix(-1 0 0 1 54 0)"/>
+            </clipPath>
+        </defs>
+    </svg>
+
+
+    <svg class="X" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 4L4 12" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M4 4L12 12" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+
+
+</div>
+
+@code{
+    public string messagestring = "";
+}

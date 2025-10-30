@@ -1,0 +1,12 @@
+D:\HashtProjects\HashtSoft\HashtTaxPanel\src\HashtApp.Radzen\bin\Debug\net9.0\HashtAppRadzen.deps.json
+D:\HashtProjects\HashtSoft\HashtTaxPanel\src\HashtApp.Radzen\bin\Debug\net9.0\HashtAppRadzen.dll
+D:\HashtProjects\HashtSoft\HashtTaxPanel\src\HashtApp.Radzen\bin\Debug\net9.0\HashtAppRadzen.pdb
+D:\HashtProjects\HashtSoft\HashtTaxPanel\src\HashtApp.Radzen\obj\Debug\net9.0\HashtAppRadzen.csproj.AssemblyReference.cache
+D:\HashtProjects\HashtSoft\HashtTaxPanel\src\HashtApp.Radzen\obj\Debug\net9.0\HashtAppRadzen.GeneratedMSBuildEditorConfig.editorconfig
+D:\HashtProjects\HashtSoft\HashtTaxPanel\src\HashtApp.Radzen\obj\Debug\net9.0\HashtAppRadzen.AssemblyInfoInputs.cache
+D:\HashtProjects\HashtSoft\HashtTaxPanel\src\HashtApp.Radzen\obj\Debug\net9.0\HashtAppRadzen.AssemblyInfo.cs
+D:\HashtProjects\HashtSoft\HashtTaxPanel\src\HashtApp.Radzen\obj\Debug\net9.0\HashtAppRadzen.csproj.CoreCompileInputs.cache
+D:\HashtProjects\HashtSoft\HashtTaxPanel\src\HashtApp.Radzen\obj\Debug\net9.0\HashtAppRadzen.dll
+D:\HashtProjects\HashtSoft\HashtTaxPanel\src\HashtApp.Radzen\obj\Debug\net9.0\refint\HashtAppRadzen.dll
+D:\HashtProjects\HashtSoft\HashtTaxPanel\src\HashtApp.Radzen\obj\Debug\net9.0\HashtAppRadzen.pdb
+D:\HashtProjects\HashtSoft\HashtTaxPanel\src\HashtApp.Radzen\obj\Debug\net9.0\ref\HashtAppRadzen.dll
