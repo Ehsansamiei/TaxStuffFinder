@@ -1,0 +1,54 @@
+@typeparam TItem
+@namespace StuffFinder.Blazor.Components.CustomDropDown
+
+<div class="custom-dropdown">
+    <div class="dropdown-header" @onclick="ToggleDropdown">
+        <span>@(SelectedText ?? Placeholder)</span>
+    </div>
+
+    @if (isOpen)
+    {
+        <div class="dropdown-list">
+            @foreach (var item in Items)
+            {
+                <div class="dropdown-item" @onclick="() => SelectItem(item)">
+                    @ItemTemplate(item)
+                </div>
+            }
+        </div>
+    }
+</div>
+
+@code {
+    [Parameter] public List<TItem> Items { get; set; } = new();
+    [Parameter] public RenderFragment<TItem> ItemTemplate { get; set; } = default!;
+    [Parameter] public string Placeholder { get; set; } = "انتخاب کنید";
+    [Parameter] public Func<TItem, string> GetText { get; set; } = default!;
+    [Parameter] public EventCallback<TItem> OnSelected { get; set; }
+
+    [Parameter] public TItem? Value { get; set; }  
+
+    private bool isOpen = false;
+    private string? SelectedText;
+
+    private void ToggleDropdown() => isOpen = !isOpen;
+
+    private async Task SelectItem(TItem item)
+    {
+        SelectedText = GetText(item);
+        isOpen = false;
+        await OnSelected.InvokeAsync(item);
+    }
+
+    protected override void OnParametersSet()
+    {
+        if (Value != null && Items.Any())
+        {
+            var matchedItem = Items.FirstOrDefault(i => GetText(i) == GetText(Value));
+            if (matchedItem != null)
+            {
+                SelectedText = GetText(matchedItem);
+            }
+        }
+    }
+}

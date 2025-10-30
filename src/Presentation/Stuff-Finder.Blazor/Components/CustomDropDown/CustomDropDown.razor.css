@@ -1,0 +1,71 @@
+.custom-dropdown {
+    width: 232px;
+    height: 36px;
+    position: relative;
+    font-family: inherit;
+    text-align: right;
+    z-index: 10000;
+}
+
+.dropdown-header {
+    background-color: white;
+    direction: rtl;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.7204 0.220002L6.25043 4.69L1.78043 0.220002C1.49043 -0.0699975 1.01043 -0.0699975 0.72043 0.220002C0.43043 0.510002 0.43043 0.990002 0.72043 1.28L5.72043 6.28C5.86043 6.42 6.05043 6.5 6.25043 6.5C6.45043 6.5 6.64043 6.42 6.78043 6.28L11.7804 1.28C12.0704 0.990002 12.0704 0.510002 11.7804 0.220002C11.4904 -0.0699975 11.0104 -0.0699975 10.7204 0.220002Z' fill='%23018ABE'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: left 20px top 20px;
+    background-size: 12px;
+    border: 2px solid #018ABE;
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 232px;
+    height: 36px;
+}
+
+.arrow {
+    color: #ff9900;
+
+}
+
+.dropdown-list {
+    position: absolute;
+    width: 100%;
+    background: white;
+    border-radius: 8px;
+    margin-top: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown-item {
+    padding: 12px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.dropdown-item:hover {
+    background-color: #e8f1ff;
+    /* رنگ آبی کم‌رنگ فقط در حالت هاور */
+}
+
+.item-details {
+    font-size: 14px;
+    color: #555;
+    margin-top: 5px;
+}
